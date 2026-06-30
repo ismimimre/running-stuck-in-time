@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href=calltheindcopy.css>
+    </head>
+<body>
+    <div class="header">
+      <div class="grid-containerheader">
+  <img class="denemeGörsel" src="img/indlogo.png" id="animTupper" onclick="startAudio()">
+  <h1 class="title"> Call The Belastingdienst </h1>
+  <button class="stopbutton" onclick="openPopup()">Click Here To Stop Trying</button>
+    </div>
+    </div>
+<div class="grid-container_instructions">
+  <div class="instructions_title"> 
+  <p>Instructions</p></div>
+   <div class="instructions_content">  <p class="instructionsp"> You are on a call with the Belastingdienst, <br>but before you reach a worker you must first answer the bots questions accurately. <br>The only catch, you don't understand the language <br> Click on the bot icon to hear the questions</p> </div>
+   <div class="help">  <a  onclick="text1Function()"> 
+    <img class="friend" src="img/ineeddocuments.nl.svg"> </a> </div>
+    <div class="text1" id="text1"> <p>"Hmmm, I am not sure <br>but I think on the second question <br> its asking for your BSN..."</p> </div>
+</div> 
+
+<div class="popup" id="popup">
+    <h2>You are choosing to stop</h2>
+  <p>By not reaching the Tax Authorities you are owing over 1400 euros to the government <br>this has the potential of resulting with your residence permit applications getting rejected<br>SOME RIGHTS & PRIVILIGES YOU ARE LETTING GO OF<br>1- Free Travel Within the EU <br>2-Residing in the Netherlands <br>3-Elligibility for artist grants and funds</p>
+<button class="popupbutton" id="popupbutton" onclick="window.location.href='runningstuckintime.html?failed=level2'">Who Cares</button>  <!--change the on clicks-->
+<button class="popupbutton" id="popupbutton2" onclick="closePopup()">No, okay that sounds bad. Continue</button> 
+</div>
+
+<div class="grid-container1">
+
+   <div class="grid-container2">
+     <div class="row1">
+      <a onclick="myAudioFunction('1');"> 
+        <img class="bot" src="img/operatorcall.png"> </a>
+        <div class="input-group">
+        <input class="input" type="text" id="nums1">
+        <button id="btn1">Checker</button>
+        <div class="grid-container_call"> 
+          <button class="button" id="one"> 1 </button>
+          <button class="button" id="two"> 2 </button>
+          <button class="button" id="three"> 3 </button>
+          <button class="button" id="four"> 4 </button>
+          <button class="button" id="five"> 5 </button>
+          <button class="button" id="six"> 6 </button>
+          <button class="button" id="seven"> 7 </button>
+          <button class="button" id="eight"> 8 </button>
+          <button class="button" id="nine"> 9 </button>
+          <button class="button" id="star"> * </button>
+          <button class="button" id="zero"> 0 </button>
+          <button class="button" id="mark"> # </button>
+      </div>
+     </div>
+     </div>
+     <div id="nextQuestion1" class="hidden1 row2">
+        <a onclick="myAudioFunction('2');"> 
+          <img class="bot" src="img/operatorcall.png"> </a>
+          <div class="input-group">
+          <input class="input" type="text" id="nums2">
+         <button id="btn2">Checker</button>
+         <div class="grid-container_call"> 
+          <button class="button" id="one2"> 1 </button>
+          <button class="button" id="two2"> 2 </button>
+          <button class="button" id="three2"> 3 </button>
+          <button class="button" id="four2"> 4 </button>
+          <button class="button" id="five2"> 5 </button>
+          <button class="button" id="six2"> 6 </button>
+          <button class="button" id="seven2"> 7 </button>
+          <button class="button" id="eight2"> 8 </button>
+          <button class="button" id="nine2"> 9 </button>
+          <button class="button" id="star2"> * </button>
+          <button class="button" id="zero2"> 0 </button>
+          <button class="button" id="mark2"> # </button>
+      </div>
+          </div>
+   </div>
+    
+    <div id="nextQuestion2" class="hidden2 row3">
+      <a onclick="myAudioFunction('3');"> 
+        <img class="bot" src="img/operatorcall.png"> </a>
+        <div class="input-group">
+         <input class="input" type="text" id="nums3">
+         <button id="btn3">Checker</button>
+         <div class="grid-container_call"> 
+          <button class="button" id="one3"> 1 </button>
+          <button class="button" id="two3"> 2 </button>
+          <button class="button" id="three3"> 3 </button>
+          <button class="button" id="four3"> 4 </button>
+          <button class="button" id="five3"> 5 </button>
+          <button class="button" id="six3"> 6 </button>
+          <button class="button" id="seven3"> 7 </button>
+          <button class="button" id="eight3"> 8 </button>
+          <button class="button" id="nine3"> 9 </button>
+          <button class="button" id="star3"> * </button>
+          <button class="button" id="zero3"> 0 </button>
+          <button class="button" id="mark3"> # </button>
+      </div>
+    </div>
+    </div>
+    <div id="nextQuestion3" class="hidden2 row4">
+      <div class="input-group">
+      <a onclick="myAudioFunction('4');">
+        <img class="bot" src="img/operatorcall.png"> </a>
+         <input class="input" type="text" id="nums4">
+         <button id="btn4">Checker</button>
+         <div class="grid-container_call"> 
+          <button class="button" id="one4"> 1 </button>
+          <button class="button" id="two4"> 2 </button>
+          <button class="button" id="three4"> 3 </button>
+          <button class="button" id="four4"> 4 </button>
+          <button class="button" id="five4"> 5 </button>
+          <button class="button" id="six4"> 6 </button>
+          <button class="button" id="seven4"> 7 </button>
+          <button class="button" id="eight4"> 8 </button>
+          <button class="button" id="nine4"> 9 </button>
+          <button class="button" id="star4"> * </button>
+          <button class="button" id="zero4"> 0 </button>
+          <button class="button" id="mark4"> # </button>
+      </div>
+    </div>
+    </div>
+
+    <div id="nextQuestion4" class="hidden2 row5">
+      <a onclick="myAudioFunction('son');"> 
+        <img class="bot" src="img/operatorcall.png"> </a>
+        <div class="input-group">
+         <input class="input" type="text" id="nums5">
+         <button id="btn5">Checker</button>
+         <div class="grid-container_call"> 
+          <button class="button" id="one5"> 1 </button>
+          <button class="button" id="two5"> 2 </button>
+          <button class="button" id="three5"> 3 </button>
+          <button class="button" id="four5"> 4 </button>
+          <button class="button" id="five5"> 5 </button>
+          <button class="button" id="six5"> 6 </button>
+          <button class="button" id="seven5"> 7 </button>
+          <button class="button" id="eight5"> 8 </button>
+          <button class="button" id="nine5"> 9 </button>
+          <button class="button" id="star5"> * </button>
+          <button class="button" id="zero5"> 0 </button>
+          <button class="button" id="mark5"> # </button>
+      </div>
+    </div>
+    </div>
+    <div id="youdidit" class="hidden2 row6">
+      <h2> You Did It! </h2>
+      <p>You reached an Belastingdienst worker, who explained that<br>"You should write a letter to the tax authorities objecting how much they estimated you owed in tax."</p>
+      <a href="runningstuckintime.html"><button>Continue Playing</button></a>
+</div>
+ <!-- <img class="informationcard" src="img/infocard.jpg"> -->
+</div>
+<img class="wallet" id="wallet" onclick="showIdname()" onmouseleave="closeIdname()" src="img/wallet.png">
+</div>
+
+
+<script src="calltheindcopy.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page</title>
+    </head>
+    <body>
+        <header class="heading">
+            <h1 class="title">Waiting Period</h1>
+        </header>
+        <div id="progressBar" class="progressBar">
+            <div id="progressBarInner" class="progressBarInner"></div>
+        </div>
+
+        <div class="permitTime permitTimeInvisible" id="permitTime">
+            <div id="permitBar" class="permitBar">
+                <div id="permitBarInner" class="permitBarInner"></div>
+            </div>
+            <p class="permitTxt">
+                The legal document allowing you to stay in the country is
+                expiring. Go to the IND to get an extention
+            </p>
+            <button
+                id="permitButton"
+                class="permitButton"
+                onclick="closeAlert()"
+            >
+                Get The Permit
+            </button>
+        </div>
+
+        <button class="stopbutton" onclick="openPopup()">
+            Click Here To Stop Trying
+        </button>
+
+        <div class="popup" id="popup">
+            <h2>You are choosing to stop</h2>
+            <p>
+                By not trying to increase your.<br>SOME RIGHTS & PRIVILIGES YOU
+                ARE LETTING GO OF<br>1- Free Travel Within the EU <br>2-Residing
+                in the Netherlands <br>3-Elligibility for artist grants and
+                funds
+            </p>
+            <button
+                class="popupbutton"
+                id="popupbutton"
+                onclick="window.location.href='welcome.html?returnId=22'"
+            >
+                Who Cares
+            </button>
+            <!--change the on clicks-->
+            <button
+                class="popupbutton"
+                id="popupbutton2"
+                onclick="closePopup()"
+            >
+                No, okay that sounds bad. Continue
+            </button>
+        </div>
+
+        <div class="health">
+            <p id="health" class="number"></p>
+            <div class="statBar">
+                <div id="healthBarInner" class="statBarInner"></div>
+            </div>
+        </div>
+        <div class="wealth">
+            <p id="wealth" class="number"></p>
+            <div class="statBar">
+                <div id="wealthBarInner" class="statBarInner"></div>
+            </div>
+        </div>
+        <div class="joy">
+            <p id="joy" class="number"></p>
+            <div class="statBar">
+                <div id="joyBarInner" class="statBarInner"></div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <h1 id="myElement"></h1>
+        </div>
+        <div class="answer1">
+            <button class="answerOne" id="answer1"></button>
+        </div>
+        <div class="answer2">
+            <button class="answerTwo" id="answer2"></button>
+        </div>
+        <script>
+            let currentQuestion = 0;
+            let currentHealth = 45;
+            let currentWealth = 20;
+            let currentJoy = 30;
+
+            fetch("trial.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    function showQuestion() {
+                        document.getElementById("myElement")
+                            .innerText = data[currentQuestion]
+                                .questionTxt;
+                        document.getElementById("answer1")
+                            .innerText = data[currentQuestion]
+                                .questionAnswer[0].answer;
+                        document.getElementById("answer2")
+                            .innerText = data[currentQuestion]
+                                .questionAnswer[1].answer;
+                        document.getElementById("health")
+                            .innerText = "Application Health " +
+                                currentHealth + "%";
+                        document.getElementById("wealth")
+                            .innerText = "Wealth " +
+                                currentWealth;
+                        document.getElementById("joy")
+                            .innerText = "Joy " + currentJoy +
+                                "%";
+                        document.getElementById(
+                            "healthBarInner",
+                        ).style.width = currentHealth + "%";
+                        document.getElementById(
+                            "wealthBarInner",
+                        ).style.width = currentWealth + "%";
+                        document.getElementById("joyBarInner")
+                            .style.width = currentJoy + "%";
+                    }
+
+                    showQuestion();
+
+                    document.getElementById("answer1")
+                        .addEventListener("click", function () {
+                            currentHealth = currentHealth +
+                                data[currentQuestion]
+                                    .questionAnswer[0].health;
+                            currentWealth = currentWealth +
+                                data[currentQuestion]
+                                    .questionAnswer[0].wealth;
+                            currentJoy = currentJoy +
+                                data[currentQuestion]
+                                    .questionAnswer[0].joy;
+                            currentQuestion++;
+                            if (currentWealth < 0) {
+                                document.getElementById(
+                                    "result",
+                                ).classList.add("showresults");
+                                document.getElementById(
+                                    "resultText",
+                                ).innerText =
+                                    "Unfortunately, you ran out of money to sustain yourself within this country. You have to go back.";
+                                document.getElementById(
+                                    "continueButton",
+                                ).href =
+                                    "welcome.html?returnId=22";
+                                document.getElementById(
+                                    "answer1",
+                                ).disabled = true;
+                                document.getElementById(
+                                    "answer2",
+                                ).disabled = true;
+                                return;
+                            }
+
+                            if (currentQuestion < data.length) {
+                                showQuestion();
+                            } else {
+                                //no more questions, just waiting for the desicions
+                                //sonra bunun hepsini timer'ın altına koy.
+                                document.getElementById(
+                                    "myElement",
+                                ).innerText =
+                                    "No decision to be made, just wait for the decision from the IND.";
+                                document.getElementById(
+                                    "answer1",
+                                ).classList.add("hideAnswer1");
+                                document.getElementById(
+                                    "answer2",
+                                ).classList.add("hideAnswer2");
+                            }
+                        });
+
+                    document.getElementById("answer2")
+                        .addEventListener("click", function () {
+                            currentHealth = currentHealth +
+                                data[currentQuestion]
+                                    .questionAnswer[1].health;
+                            currentWealth = currentWealth +
+                                data[currentQuestion]
+                                    .questionAnswer[1].wealth;
+                            currentJoy = currentJoy +
+                                data[currentQuestion]
+                                    .questionAnswer[1].joy;
+                            currentQuestion++;
+
+                            if (currentWealth < 0) {
+                                document.getElementById(
+                                    "result",
+                                ).classList.add("showresults");
+                                document.getElementById(
+                                    "resultText",
+                                ).innerText =
+                                    "Unfortunately, you ran out of money to sustain yourself within this country. You have to go back.";
+                                document.getElementById(
+                                    "continueButton",
+                                ).href =
+                                    "welcome.html?returnId=22";
+                                document.getElementById(
+                                    "answer1",
+                                ).disabled = true;
+                                document.getElementById(
+                                    "answer2",
+                                ).disabled = true;
+                                return;
+                            }
+                            if (currentQuestion < data.length) {
+                                showQuestion();
+                            } else {
+                                document.getElementById(
+                                    "myElement",
+                                ).innerText =
+                                    "No decision to be made, just wait for the decision from the IND.";
+                                document.getElementById(
+                                    "answer1",
+                                ).classList.add("hideAnswer1");
+                                document.getElementById(
+                                    "answer2",
+                                ).classList.add("hideAnswer2");
+                            }
+                        });
+                });
+
+            const progressBar = document.querySelector(
+                ".progressBarInner",
+            );
+
+            //burayı start buttonsuz yapmak lazım
+            function startTimer() {
+                let interval = 100;
+                var countDown = setInterval(() => {
+                    interval--;
+
+                    let progressWidth = interval / 100 * 100;
+
+                    if (interval > 0) {
+                        progressBar.style.width =
+                            progressWidth + "%";
+                        openAlert(progressWidth);
+                    } else {
+                        clearInterval(countDown);
+                        progressBar.style.width = "0%";
+                        window.location.href =
+                            "welcome.html?returnId=22";
+                        document.getElementById("answer1")
+                            .disabled = true;
+                        document.getElementById("answer2")
+                            .disabled = true;
+                        let options = [0.2, 0.3, 0.4];
+                        let indKeyfi = options[
+                            Math.round(Math.random() * 2)
+                        ];
+                        let passingPotential = currentHealth *
+                            indKeyfi;
+
+                        if (passingPotential >= 26) {
+                            document.getElementById("result")
+                                .classList.add("showresults");
+                            document.getElementById(
+                                "resultText",
+                            ).innerText =
+                                "Congratulations! You got the artist visa and have earned an extra year.";
+                            document.getElementById(
+                                "continueButton",
+                            ).href = "runningstuckintime.html"; //bunu da değiştirmen lazımn
+                            console.log(passingPotential);
+                        } else {
+                            document.getElementById("result")
+                                .classList.add("showresults");
+                            document.getElementById(
+                                "resultText",
+                            ).innerText =
+                                "Unfortunately, you did not get the artist visa, you have 28 days to leave the country.";
+                            document.getElementById(
+                                "continueButton",
+                            ).href = "welcome.html?returnId=22";
+                            console.log(passingPotential);
+                        }
+                    }
+                }, 1000);
+            }
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                    startTimer();
+                    showStats();
+                },
+            );
+
+            const permitBar = document.querySelector(
+                ".permitBarInner",
+            );
+
+            let permitInterval = 100;
+            let permitCountDown = null;
+
+            //burayı start buttonsuz yapmak lazım
+            function startPermitTimer() {
+                permitInterval = 100; // Reset the permitInterval to 100 each time the timer starts
+
+                if (permitCountDown) {
+                    clearInterval(permitCountDown); // Clear any existing interval
+                }
+                permitCountDown = setInterval(() => {
+                    permitInterval--;
+
+                    permitBar.style.width =
+                        (permitInterval / 100 * 100) + "%";
+                    if (permitInterval <= 0) {
+                        clearInterval(permitCountDown);
+                        permitCountDown = null; // Reset the permitCountDown variable
+                        permitBar.style
+                            .visibility == "hidden";
+
+                        window.location.href =
+                            "welcome.html?returnId=22";
+                    }
+                }, 300);
+            }
+            //kesin permit timer ı bi de durdurmamız gerekecek ama hadi bakalım, bunu düzeltmeyi ıunutma
+            const openAlert = (width) => {
+                if (width == 90 || width == 30 || width == 10) {
+                    document.getElementById("permitTime").style
+                        .visibility = "visible";
+                    console.log("hi");
+                    if (
+                        permitTime.style.visibility == "visible"
+                    ) {
+                        startPermitTimer();
+                        document.getElementById("answer1")
+                            .disabled = true;
+                        document.getElementById("answer2")
+                            .disabled = true;
+                    }
+
+                    //alert değil div yapman lazım istersen move around eden div yap
+                    // also add some time to the interval when the popup is closed
+                }
+            };
+
+           
+    function stopPermitTimer() {
+        if (countDown) {
+            clearInterval(permitCountDown);
+            permitCountDown = null;
+        }
+        permitInterval = 100;                         // reset for next open
+        permitBar.style.width = "100%";         // visually reset the bar
+    }
+
+    function closeAlert() {
+        document.getElementById("permitTime").style.visibility = "hidden";
+        document.getElementById("answer1").disabled = false;
+        document.getElementById("answer2").disabled = false;
+        stopPermitTimer();      // clears + resets, ready for next openAlert call
+    }
+
+
+            let popup = document.getElementById("popup");
+            function openPopup() {
+                popup.classList.add("open-popup");
+            }
+            function closePopup() {
+                popup.classList.remove("open-popup");
+            }
+        </script>
+    </body>
+    <style>
+        .heading {
+            position: absolute;
+            width: 100%;
+            height: 20vh;
+            top: -2vh;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+            background-color: #154273;
+        }
+        .title {
+            position: relative;
+            top: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: rgb(255, 255, 255);
+        }
+        .questions {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 60em;
+            transform: translateX(-50%);
+            font-size: 12px;
+            border: 0.2em solid black;
+            text-align: center;
+            padding: 0.8em;
+        }
+
+        .answerOne {
+            position: absolute;
+            top: 65%;
+            left: 22%;
+            height: 11em;
+            width: 15em;
+            font-family: sans-serif;
+            font-size: 15px !important;
+        }
+        .hideAnswer1 {
+            display: none;
+        }
+        .answerTwo {
+            position: absolute;
+            top: 65%;
+            left: 62%;
+            height: 11em;
+            width: 15em;
+            font-family: sans-serif;
+            font-size: 15px !important;
+        }
+        .hideAnswer2 {
+            display: none;
+        }
+        .number {
+            text-align: left;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            color: white;
+            margin: 0%;
+        }
+
+        .health {
+            position: absolute;
+            top: 4%;
+            left: 5.2%;
+            text-align: center;
+            border-radius: 25%;
+            margin: 0%;
+        }
+        .wealth {
+            position: absolute;
+            top: 8%;
+            left: 5.2%;
+            text-align: center;
+            border-radius: 25%;
+            margin: 0%;
+        }
+        .joy {
+            position: absolute;
+            top: 12%;
+            left: 5.2%;
+            text-align: center;
+            border-radius: 25%;
+            margin: 0%;
+        }
+        .statBar {
+            width: 140px;
+            height: 16px;
+            background-color: #ddd;
+            border-radius: 5px;
+            border: solid black 0.06em;
+        }
+
+        .statBarInner {
+            height: 100%;
+            background-color: rgb(137, 179, 230);
+            border-radius: 5px;
+            width: 40%; /*nerde olduğuna göre tekrar gel*/
+            transition: width 0.3s;
+        }
+        .result {
+            position: absolute;
+            border: 0.8em solid black;
+            font-size: 30px;
+            top: 50%;
+            background-color: thistle;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+            padding: 2em;
+        }
+
+        .showresults {
+            visibility: visible;
+        }
+
+        #progressBar {
+            width: 90%;
+            margin: 10px auto;
+            height: 22px;
+            background-color: #efd0d0;
+            position: relative;
+            outline: black solid 0.2em;
+        }
+
+        #progressBarInner {
+            height: 100%;
+            width: 100%;
+            background-color: #d05656;
+            outline: black solid 0.2em;
+            position: absolute;
+        }
+
+        #permitBar {
+            width: 90%;
+            margin-top: 1px;
+            margin-bottom: 7px;
+            height: 8px;
+            background-color: #5e73f8;
+            position: relative;
+            outline: black solid 0.05em;
+        }
+
+        #permitBarInner {
+            height: 100%;
+            width: 100%;
+            background-color: #03032b;
+            outline: black solid 0.05em;
+            position: absolute;
+        }
+
+        .permitTime {
+            position: absolute;
+            border: 0.1em solid black;
+            font-size: 24px;
+            top: 20%;
+            background-color: rgb(165, 193, 249);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 2em;
+            z-index: 9;
+        }
+        .permitTimeVisible {
+            visibility: visible;
+        }
+        .permitTimeInvisible {
+            visibility: hidden;
+        }
+        #continueButton {
+            display: block;
+            color: black; /* or any color */
+            cursor: pointer;
+        }
+
+        .stopbutton {
+            position: absolute;
+            top: 8vh;
+            right: 10px;
+            background-color: darkred;
+            color: #ddd;
+            font-size: large;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            border: black solid 2px;
+            border-radius: 10px;
+            text-align: center;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            z-index: 1001;
+            transition: all 0.1s ease-in-out;
+        }
+        .stopbutton:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .popup {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            text-align: center;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+        .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</html>

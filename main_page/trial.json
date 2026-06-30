@@ -1,0 +1,144 @@
+[
+    {
+        "questionNum": 1,
+        "questionTxt": "You have received two potential freelance jobs. One is for a commercial photoshoot which would pay your rent for this month. The other one is paying almost nothing, however it is a shoot for an Organization funded by the Government and there is a chance they would write you a recommendation letter. The jobs are overlapping in time. Do you…",
+        "questionAnswer":
+        [
+            {
+                "answer": "Go with the commercial job",
+                "health": -20,
+                "wealth": 30,
+                "joy": 10
+            },
+            {
+                "answer": "Go with the Government Funded Organization",
+                "health": 7,
+                "wealth": 3,
+                "joy": -10
+            }
+        ]
+    },
+    {
+        "questionNum": 2,
+        "questionTxt": "You ran into multiple friends who have received their artist visa and are telling you that they had to fulfill an income requirement. You thought that you didn’t for your first time applying but your friends sounded very certain and they managed to stay. Do you…",
+        "questionAnswer":
+        [
+            {
+                "answer": "Ask your lawyer. However, the lawyer charges 200 Euros per hour.",
+                "health": 2,
+                "wealth": -20,
+                "joy": 10
+            },
+            {
+                "answer": "Don’t ask the lawyer. ",
+                "health": -2,
+                "wealth": 0,
+                "joy": -10
+            }
+        ]
+    },
+    {
+            "questionNum": 3,
+            "questionTxt": "Your grandma’s sickness has gotten very bad and the doctors don’t think she will live longer than a month. You really want to be there for your grandmother’s funeral, to say goodbye and to support your mother.  The issue is, you need a return visa to get back in the country. You need to find availability for an appointment with the IND. The return visa is for a month max. A return visa costs 73 Euros. It can only be used once. Do you...",
+            "questionAnswer":
+            [
+                {
+                    "answer": "Get the return visa now.",
+                    "health": 0,
+                    "wealth": -20,
+                    "joy": 10
+ 
+ 
+                },
+                {
+                    "answer": "Wait until she passes away to apply for the return visa.",
+                    "health": 0,
+                    "wealth": 20,
+                    "joy": -10
+                }
+            ]
+        },
+        {
+            "questionNum": 4,
+            "questionTxt": "There are two overlapping jobs offered to you. They are both supported by a different Fund of the Government and are both saying that they would write you a letter of recommendation. Do you….",
+            "questionAnswer":
+            [
+                {
+                    "answer": "Option A",
+                    "health":  -10,
+                    "wealth": 5,
+                    "joy": 10
+                },
+                {
+                   
+                    "answer": "Option B",
+                    "health": 20,
+                    "wealth": -20,
+                    "joy": -10
+                }
+            ]
+        },
+        {
+            "questionNum": 5,
+            "questionTxt": "Yay! A gallery in the X European country is exhibiting your works, this is a major step in your artistic career. You really want to go to X and take part in person. However, you need to apply for a visa. A Schengen visa costs 90 Euros and usually takes a bit over a month to arrive. There are only three weeks until the exhibition. Do you...",
+            "questionAnswer":
+            [
+                {
+                    "answer": "Apply for the visa, risk not receiving it in time and wasting the money",
+                    "health": 4,
+                    "wealth": -20,
+                    "joy": 10
+                },
+                {
+                    "answer": "Miss the exhibition",
+                    "health": -7,
+                    "wealth": 0,
+                    "joy": -10
+                }
+            ]
+        },
+        {
+                "questionNum": 6,
+                "questionTxt": "You have received a potential job that doesn’t pay much from a Governmentally funded Organization that you have worked with before. They had promised to send you a letter of recommendation, however they still didn’t send one yet. You reminded them of the letter when they reached out to work with you and they told you they would write it after this job. Do you.",
+                "questionAnswer":
+                [
+                    {
+                        "answer": "take the job",
+                        "health": 2,
+                        "wealth": 2,
+                        "joy": -10
+   
+                    },
+                    {
+                        "answer": "Don’t take the job",
+                        "health": -2,
+                        "wealth": 0,
+                        "joy": 5
+                    }
+                ]
+            },
+            {
+                "questionNum": 7,
+                "questionTxt": "Yay! Your brother is getting married. You really want to go. However, the wedding falls right over the days in which IND stated they would respond to you by.  If the IND denies your application you can appeal. However, within the first detail they also state if you are able to reside in the Netherlands while you are awaiting the decision of the appeal. If they have requested you to leave the country while they are reviewing your appeal, you can appeal that decision also within the same day you receive the letter. Do you...",
+                "questionAnswer":
+                [
+                    {
+                        "answer": "Go to the wedding.",
+                        "health": -20,
+                        "wealth": -20,
+                        "joy": 20
+   
+                    },
+                    {
+                        "answer": "Stay in the Netherlands just in case.",
+                        "health": 0,
+                        "wealth": 0,
+                        "joy": -20
+                    }
+                ]
+            }
+       
+       
+   
+ ]
+ 

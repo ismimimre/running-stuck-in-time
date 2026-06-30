@@ -1,0 +1,201 @@
+{
+    "sentences": [
+      {
+        "id": 1,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Congratulations!!", "underlined": false }
+        ]
+      },
+      {
+        "id": 2,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "You just graduated from a prestigious Dutch Arts Academy!", "underlined": false }
+        ]
+      },
+      {
+        "id": 3,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Now you are ready to set up your life in the Netherlands as an artist!", "underlined": false }
+        ]
+      },
+      {
+        "id": 4,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "But wait a second, you don't have EU citizenship!", "underlined": false }
+        ]
+      },
+      {
+        "id": 5,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "How will you stay in the country?", "underlined": false }
+        ]
+      },
+      {
+        "id": 6,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "There are ways to get ", "underlined": false },
+          { "text": "Dutch citizenship", "underlined": true, "explanation": "In order to get Dutch citizenship you need to have lived in the country without a break for five years and have a non-temporary reason of stay (so no student visa or orientation year visa)." },
+          { "text": " or ", "underlined": false },
+          { "text": "permanent residency", "underlined": true, "explanation": "For permanent residency you also need to have lived in the Netherlands without a break for 5 years, additionally you need to have a certain income." }
+          
+        ]
+      },
+      {
+        "id": 7,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "In order to apply for a non-temporary reason of stay visa you need time.", "underlined": false }
+        ]
+      },
+      {
+        "id": 8,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Lucky for you, graduates from Dutch Higher Education Institutes have the right to apply for a Zoekjaar visa.", "underlined": false }
+        ]
+      },
+      {
+        "id": 9,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Zoekjaar visa", "underlined": true, "explanation": "During this time, as opposed to your study years, employers don't have to apply for a work permit for you, so you can work freely. The idea is to build good enough relations with your employer so they accept to sponsor your visa's in the future." },
+          { "text": ", also known as Orientation Year Visa, is a one year residence permit allowing you to apply for jobs.", "underlined": false }
+        ]
+      },
+      {
+        "id": 10,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Apply for a Zoekjaar visa!", "underlined": false }
+        ]
+      },
+      {
+        "id": 11,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Now that you have your Zoekjaar visa you can take a breath.", "underlined": false }
+        ]
+      },
+      {
+        "id": 12,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "But not so fast!! The clock is ticking. You have a year to ensure your stay in the country.", "underlined": false }
+        ]
+      },
+      {
+        "id": 13,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "As an artist, it is unlikely for you to find (the will to live in) corporate employment. However, there are some visas for freelancers.", "underlined": false }
+        ]
+      },
+      {
+        "id": 14,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Specifically the \"self employment based on cultural visa\" colloquially known as the ", "underlined": false },
+          { "text": "artist visa", "underlined": true, "explanation": "Artist visa is given to self-employed people whose existence in the Netherlands serves the cultural interest. Your services to Dutch culture are assessed by the Dutch Ministry of Culture, Science and Education. You need to apply by submitting your portfolio, and letters from organizations and venues that are supported by the Dutch Government, Municipalities or one of the big funds (you may have also received a grant from the funds). The first artist visa is given for two years. In case of a rejection you have 28 days to appeal the decision or to leave the country." },
+          { "text": " seems the most appropriate.", "underlined": false }
+        ]
+      },
+      {
+        "id": 15,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "For freelance work, you need to have registered to ", "underlined": false },
+          { "text": "KVK", "underlined": true, "explanation": "You need to register at Kamer Voor Koophandel (Chamber of Commerce), as a self-employed person to get a tax number. Remember to declare your income quarterly and to pay your taxes." },
+          { "text": ". Register.", "underlined": false }
+        ]
+      },
+      {
+        "id": 16,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Now you need to make the right moves as a freelancer to obtain the artist visa.", "underlined": false }
+        ]
+      },
+      {
+        "id": 17,
+        "link": "choices_game_1",
+        "image": "blue_letter_icon",
+        "parts": [
+          { "text": "Oh, be careful! You received a blue letter. It is saying you owe the goverment 6000 euros for not paying your taxes!!!", "underlined": false }
+        ]
+      },
+      {
+        "id": 18,
+        "link": "belasting_game",
+        "image": null,
+        "parts": [
+          { "text": "You better call the Belasting to solve the issue, remember that exceeding fines immediately disqualifies you from artist visa eligibility.", "underlined": false }
+        ]
+      },
+      {
+        "id": 19,
+        "link": null,
+        "image": null,
+        "parts": [
+          { "text": "Phew the crisis is averted.", "underlined": false }
+        ]
+      },
+      {
+        "id": 20,
+        "link": "artist_visa_apply_game",
+        "image": null,
+        "parts": [
+          { "text": "We can finally apply for the artist visa.", "underlined": false }
+        ]
+      },
+      {
+        "id": 21,
+        "link": "choices_game_2",
+        "image": null,
+        "parts": [
+          { "text": "Now you are in the ", "underlined": false },
+          { "text": "waiting period", "underlined": true, "explanation": "During the waiting period you are waiting for the decision. It is supposed to last a maximum of 6 months however it can go up to a year. You reside in the Netherlands legally however you do not have a Schengen visa, so you can not travel within Europe (you can if you apply and pay the fee). You have stickers on your passport as your legal document of residence in the Netherlands, you need to renew them if they expire before your artist visa arrives. If you need to leave the country you need to get a return visa, which can be provided for a maximum of a month and requires an appointment with the IND." },
+          { "text": ", you can still strengthen your application by sending additional materials to the IND.", "underlined": false }
+        ]
+      },
+      {
+        "id": 22,
+        "link": "choices_game_2",
+        "image": null,
+        "parts": [
+          { "text": "You couldn't get the residence permit, if you want to try again apply for a masters in the Netherlands and start the whole proces all over. ", "underlined": false }
+        
+        ]
+      },
+      {
+        "id": 23,
+        "link": "choices_game_2",
+        "image": null,
+        "parts": [
+          { "text": "You couldn't get the residence permit, if you want to try again apply for a masters in the Netherlands and start the whole proces all over. ", "underlined": false }
+        
+        ]
+      }
+    ]
+  }

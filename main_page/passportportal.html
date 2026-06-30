@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href=passportportal.css>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+     <!--  <link rel="stylesheet" href="/resources/demos/style.css"> --> 
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    </head>
+<body onload="showStats()">
+  <heading class="heading">
+    <h1 class="title">Zoekjaar Application Portal</h1>
+    <button class="stopbutton" onclick="openPopup()">Click Here To Stop Trying</button>
+  </heading>
+  <div id="progressBar" class="progressBar">
+  <div id="progressBarInner" class="progressBarInner"></div></div>
+  <div class="popup" id="popupSize">
+    <h2>The Portal is Giving an Error</h2>
+  <p>Your passport file is too big, it is supposed to be under ... size. Please compress and try again</p>
+<button class="popupbutton" id="popupbutton2" onclick="closePopupS()">Compress Passport File</button> 
+</div>
+<div class="popup" id="popupDoc">
+  <h2>The Portal is Giving an Error</h2>
+<p>You are trying to upload multiple files, please combine all the pages of your passport in a singular file</p>
+<button class="popupbutton" id="popupbutton2" onclick="closePopupD()">combine the pages</button> 
+</div>
+<div class="popup" id="popup">
+  <h2>You are choosing to stop</h2>
+<p>Your student residence permit is about to expire <br>Without a residence permit, you will be either deported or residing in the NEtherlands without documentation.<br>SOME RIGHTS & PRIVILIGES YOU ARE LETTING GO OF<br>1- Free Travel Within the EU <br>2-Residing in the Netherlands <br>3-Elligibility for artist grants and funds</p>
+<button class="popupbutton" id="popupbutton" onclick="window.location.href='welcome.html?returnId=22'">Who Cares</button>  <!--change the on clicks-->
+<button class="popupbutton" id="popupbutton2" onclick="closePopup()">No, okay that sounds bad. Continue</button> 
+</div>
+
+<div class="health">
+  <p id="health" class="number"></p>
+  <div class="statBar"><div id="healthBarInner" class="statBarInner"></div></div>
+</div>
+<div class="wealth">
+  <p id="wealth" class="number"></p>
+  <div class="statBar"><div id="wealthBarInner" class="statBarInner"></div></div>
+</div>
+<div class="joy">
+  <p id="joy" class="number"></p>
+  <div class="statBar"><div id="joyBarInner" class="statBarInner"></div></div>
+</div>
+
+<div class="questions" id="questions">
+<div class="question" id="question1">
+  <label>1-  Upload your diploma.</label>
+  <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" onchange="openSecondQ()">
+</div>
+<div class="question2" id="question2">
+  <label>2-  Pay 200 euros for the Application fee.</label> <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2" onchange="openThirdQ()">
+</div>
+<div class="question3" id="question3">
+  <p>3- Scan all the pages of your passprt and upload it</p>
+</div>
+</div>
+<div id="dragcontainer">
+  <div><img id="passport" src="img/passport.png" class="passport"></div>
+  <div id="passportinput" class="ui-widget-header">Upload Passport Here</div>
+</div>
+
+<div id="congrats" class="congrats">
+  You applied for you orientation year visa, you now have one more year before your time runs out.
+  <a href="welcome.html?returnId=11"><button class="popupbutton" id="popupbutton3">Continue</button></a>
+</div>
+
+<p class="counter"><p id="ra-counter" class="ra-counter"></p><p>
+  
+
+       
+    
+
+</body>
+<script src="passportportal.js"></script>

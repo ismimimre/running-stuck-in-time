@@ -1,0 +1,118 @@
+.header {
+    background-color: #154273;
+    padding: 8px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    position-anchor: top;
+  }
+
+  .title {
+    font-size: 52px;
+    font-weight: bold;
+    color: white;
+    margin-left: 25%;
+  }
+
+  .grid-containerheader {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    margin-top: 2em;
+    margin-bottom: 0em;
+    padding-inline: 4em;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 22%;
+    margin-left: -5%;
+    }
+
+  .instructions_title {
+    padding: 10px;
+    border: 1px transparent;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .instructions_content {
+    padding: 10px;
+    border: 1px transparent;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+  .grid-container1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* keep them aligned at the top */
+    gap: 2em; /* space between image and inputs */
+    justify-content: flex-start;
+  }
+  .grid-container2 {
+    display: grid;
+   grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+   grid-auto-flow: row;
+    position: relative;
+    z-index: 2;  
+   /* margin-left: 2em;
+    margin-right: 2em; */
+}  
+
+.bot {
+    height: 15em;
+    width: auto;
+}
+
+.game_explanation {
+    font-size: 18px;
+    color: black;
+    background-color: rgb(101, 115, 162, 50%);
+    text-align: left;
+    margin-top: 2em;
+    border: 0.2em solid #130941;
+    height: auto;
+    width: 35em;
+    border-radius: 12%;
+    padding: 2em;
+    visibility: hidden;
+
+}
+.showGameExp {
+    visibility: visible;
+}
+
+.story {
+    font-size: 18px;
+    color: black;
+    background-color: rgb(101, 115, 162, 50%);
+    text-align: right;
+    margin-top: 2em;
+    border: 0.2em solid #130941;
+    width: 35em;
+    height: em;
+    overflow: scroll;
+    border-radius: 12%;
+    padding: 2em;
+    visibility: hidden;
+}
+
+.showStory {
+    visibility: visible;
+}
+
+.columnTitle {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.storyImg {
+  height: 10em;
+  width: auto;
+  margin-top: 5em;
+}
+
+#storyImg:hover {
+  transform: scale(1.1);
+}
