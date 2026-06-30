@@ -90,3 +90,10 @@ previousSentence(sentenceData);
   
  
 });
+
+// daha fazla zaman ekle bi 65000 en azından ve diper sayfalara da ekle ama önce ilk sayfayı düzeltmen lazım.
+var timeout;
+document.onmousemove = function(){
+  clearTimeout(timeout);
+  timeout = setTimeout(function(){ window.location.href = "welcome.html?returnId=0";}, 10000);
+}
