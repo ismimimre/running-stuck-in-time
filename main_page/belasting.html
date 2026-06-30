@@ -24,8 +24,14 @@
         <p id="joy" class="number"></p>
         <div class="statBar"><div id="joyBarInner" class="statBarInner"></div></div>
     </div>
+ <button id="helpbutton" class="helpbutton" onclick="openHelp()">Help</button>
 
+<button id="skipbutton" class="skipbutton" onclick="location.href='/main_page/welcome.html?returnId=22';">Skip</button>
    
+<div class="help" id="help"> 
+  <!-- <img src="/main_page/img/friend.svg"> -->
+  <p>"Hmmm, I am not sure <br>but I think on the second question <br> its asking for your BSN..."</p> 
+  <button class="popupbutton" id="popupbutton2" onclick="closeHelp()">Okay, thank you</button> </div>
 
 <div class="popup" id="popup">
     <h2>You are choosing to stop</h2>
@@ -36,9 +42,7 @@
 
 <div class="grid-container1">
 
-    <div class="help">  <a  onclick="text1Function()"> 
-        <img class="friend" src="img/ineeddocuments.nl.svg"> </a> </div>
-        <div class="text1" id="text1"> <p>"Hmmm, I am not sure <br>but I think on the second question <br> its asking for your BSN..."</p> </div> 
+   
 
    <div class="grid-container2">
      <div class="row1">

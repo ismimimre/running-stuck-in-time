@@ -106,6 +106,62 @@ margin: 0%;
      transform: scale(1.05);
      cursor: pointer;
     }
+
+  .helpbutton {
+    position: absolute;
+    top: 13vh;
+    right: 80px;
+    background-color: darkblue;
+    color: #ddd;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: black solid 2px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    z-index: 1001;
+    transition: all 0.1s ease-in-out;
+    visibility: hidden;
+  }
+  .showHelpButton {
+    visibility: visible !important;
+  }
+  .helpbutton:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+   }
+  .skipbutton:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+   }
+  .skipbutton {
+    position: absolute;
+    top: 13vh;
+    right: 10px;
+    background-color: purple;
+    color: #ddd;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: black solid 2px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    z-index: 1001;
+    transition: all 0.1s ease-in-out;
+    visibility: hidden;
+  }
+
+  .showSkipButton {
+    visibility: visible !important;
+  }
 .hidden {
     display: none;
   }
@@ -136,6 +192,25 @@ margin: 0%;
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%)scale(1);
+}
+
+.help {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%)scale(0.1);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  text-align: center;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-help {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%)scale(1);
 }
 
   .button {

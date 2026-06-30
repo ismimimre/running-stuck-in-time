@@ -115,6 +115,8 @@ Object.entries(dialMap).forEach(([id, val]) => {
         // Load next question's audio
         currentAudio = new Audio(questions[currentQuestion].audio);
         currentAudio.play();
+        document.getElementById("helpbutton").classList.add("showHelpButton");
+        document.getElementById("skipbutton").classList.add("showSkipButton");
       }
     } else {
       //location.reload(true);
@@ -137,11 +139,22 @@ Object.entries(dialMap).forEach(([id, val]) => {
    let popup = document.getElementById("popup");
     function openPopup () {
         popup.classList.add("open-popup");
+        console.log("popup opened");
     }
     function closePopup () {
         popup.classList.remove("open-popup");
     }
+
+    let help = document.getElementById("help");
+    function openHelp () {
+        help.classList.add("open-help");
+        console.log("help opened");
+    }
+    function closeHelp () {
+        help.classList.remove("open-help");
+    }
   
+
     function showIdname () { 
       document.getElementById('wallet').src ="img/name.svg";
     }
