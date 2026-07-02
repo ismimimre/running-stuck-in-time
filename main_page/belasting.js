@@ -187,3 +187,8 @@ function showStats() {
     document.getElementById("joyBarInner").style.width = currentJoy + "%";
     console.log(currentWealth);
 }
+
+document.onmousemove = function(){
+  clearTimeout(timeout);
+  timeout = setTimeout(function(){ window.location.href = "../index.html"; }, 65000);
+}

@@ -11,7 +11,8 @@
     font-size: 52px;
     font-weight: bold;
     color: white;
-    margin-left: 25%;
+    margin-left: 22%;
+    text-align: center;
   }
 
   .grid-containerheader {
@@ -115,4 +116,29 @@
 
 #storyImg:hover {
   transform: scale(1.1);
+}
+
+.startbutton {
+    position: absolute;
+    top: 70vh;
+    right: 30%;
+    background-color: #154273;
+    color: #ddd;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: black solid 2px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    z-index: 1001;
+    transition: all 0.1s ease-in-out;  
+}
+
+.startbutton:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }

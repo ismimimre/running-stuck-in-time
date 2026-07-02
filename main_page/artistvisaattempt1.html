@@ -346,23 +346,24 @@
                 }
             };
 
-           
-    function stopPermitTimer() {
-        if (permitCountDown) {
-            clearInterval(permitCountDown);
-            permitCountDown = null;
-        }
-        permitInterval = 100;                         // reset for next open
-        permitBar.style.width = "100%";         // visually reset the bar
-    }
+            function stopPermitTimer() {
+                if (permitCountDown) {
+                    clearInterval(permitCountDown);
+                    permitCountDown = null;
+                }
+                permitInterval = 100; // reset for next open
+                permitBar.style.width = "100%"; // visually reset the bar
+            }
 
-    function closeAlert() {
-        document.getElementById("permitTime").style.visibility = "hidden";
-        document.getElementById("answer1").disabled = false;
-        document.getElementById("answer2").disabled = false;
-        stopPermitTimer();      // clears + resets, ready for next openAlert call
-    }
-
+            function closeAlert() {
+                document.getElementById("permitTime").style
+                    .visibility = "hidden";
+                document.getElementById("answer1").disabled =
+                    false;
+                document.getElementById("answer2").disabled =
+                    false;
+                stopPermitTimer(); // clears + resets, ready for next openAlert call
+            }
 
             let popup = document.getElementById("popup");
             function openPopup() {
@@ -371,6 +372,13 @@
             function closePopup() {
                 popup.classList.remove("open-popup");
             }
+
+            document.onmousemove = function () {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () {
+                    window.location.href = "../index.html";
+                }, 65000);
+            };
         </script>
     </body>
     <style>
