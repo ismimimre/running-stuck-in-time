@@ -252,16 +252,19 @@ margin: 0%;
   display: flex;
   flex-direction: row;
   margin-top: 10em;
+  margin-left: 15em;
   align-items: flex-start; /* keep them aligned at the top */
-  gap: -10em; /* space between image and inputs */
+  /*gap: -10em; /* space between image and inputs */
   justify-content: flex-start;
 }
   .grid-container2 {
     display: grid;
-   grid-template-rows: 0.2fr 0.2fr 0.2fr;
+   grid-template-rows: 0.2fr 0.2fr;
    grid-auto-flow: row;
     position: relative;
     z-index: 2;  
+   
+    
    /* margin-left: 2em;
     margin-right: 2em; */
 }  
@@ -339,7 +342,6 @@ margin: 0%;
   position: sticky;
   top: 0;
   align-self: flex-start;
-  visibility: hidden;
   transform: translate(-50%, -50%)scale(0.1);
   z-index: 1;
 

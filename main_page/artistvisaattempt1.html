@@ -175,6 +175,7 @@
                                 document.getElementById(
                                     "answer2",
                                 ).classList.add("hideAnswer2");
+                                console.log("it thinks no more question")
                             }
                         });
 
@@ -269,7 +270,7 @@
                                 "Congratulations! You got the artist visa and have earned an extra year.";
                             document.getElementById(
                                 "continueButton",
-                            ).href = "runningstuckintime.html"; //bunu da değiştirmen lazımn
+                            ).href = "../index.html"; //bunu da değiştirmen lazımn
                             console.log(passingPotential);
                         } else {
                             document.getElementById("result")
@@ -315,10 +316,10 @@
                     permitBar.style.width =
                         (permitInterval / 100 * 100) + "%";
                     if (permitInterval <= 0) {
-                        clearInterval(permitCountDown);
-                        permitCountDown = null; // Reset the permitCountDown variable
-                        permitBar.style
-                            .visibility == "hidden";
+                       // clearInterval(permitCountDown);
+                        //permitCountDown = null; // Reset the permitCountDown variable
+                       // permitBar.style
+                       //     .visibility == "hidden";
 
                         window.location.href =
                             "welcome.html?returnId=22";
@@ -339,6 +340,7 @@
                             .disabled = true;
                         document.getElementById("answer2")
                             .disabled = true;
+                            console.log("you can't answer")
                     }
 
                     //alert değil div yapman lazım istersen move around eden div yap
@@ -360,6 +362,7 @@
                     .visibility = "hidden";
                 document.getElementById("answer1").disabled =
                     false;
+                    console.log("you can answer now")
                 document.getElementById("answer2").disabled =
                     false;
                 stopPermitTimer(); // clears + resets, ready for next openAlert call
@@ -373,12 +376,7 @@
                 popup.classList.remove("open-popup");
             }
 
-            document.onmousemove = function () {
-                clearTimeout(timeout);
-                timeout = setTimeout(function () {
-                    window.location.href = "../index.html";
-                }, 65000);
-            };
+         
         </script>
     </body>
     <style>

@@ -188,7 +188,3 @@ function showStats() {
     console.log(currentWealth);
 }
 
-document.onmousemove = function(){
-  clearTimeout(timeout);
-  timeout = setTimeout(function(){ window.location.href = "../index.html"; }, 65000);
-}
