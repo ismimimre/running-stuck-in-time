@@ -93,8 +93,13 @@ body {
     margin: 10px 10px 10px 0;
     z-index: 10;
     visibility: hidden;
-    
+    cursor:grab
 }
+
+#passport.ui-draggable-dragging {
+    cursor: grabbing;
+}
+
 .passportVisible {
     visibility: visible !important;
 }

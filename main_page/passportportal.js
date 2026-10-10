@@ -128,7 +128,7 @@ function disableDragging() {
 }
 
  function openCongrats() {
-document.getElementById("congrats").classList.add("showCongrats");
+  document.getElementById("congrats").classList.add("showCongrats");
  }
 
 
