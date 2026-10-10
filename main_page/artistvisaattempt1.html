@@ -87,11 +87,29 @@
         <div class="answer2">
             <button class="answerTwo" id="answer2"></button>
         </div>
+        <div class="result" id="result" role="dialog" aria-labelledby="resultText">
+            <p id="resultText"></p>
+            <a id="continueButton" href="welcome.html?returnId=22">Continue</a>
+        </div>
         <script>
             let currentQuestion = 0;
             let currentHealth = 45;
             let currentWealth = 20;
             let currentJoy = 30;
+            let gameEnded = false;
+            let countDown = null;
+
+            function finishGame(message, destination) {
+                gameEnded = true;
+                clearInterval(countDown);
+                stopPermitTimer();
+                document.getElementById("permitTime").style.visibility = "hidden";
+                document.getElementById("answer1").disabled = true;
+                document.getElementById("answer2").disabled = true;
+                document.getElementById("resultText").innerText = message;
+                document.getElementById("continueButton").href = destination;
+                document.getElementById("result").classList.add("showresults");
+            }
 
             fetch("trial.json")
                 .then((response) => response.json())
@@ -140,23 +158,10 @@
                                     .questionAnswer[0].joy;
                             currentQuestion++;
                             if (currentWealth < 0) {
-                                document.getElementById(
-                                    "result",
-                                ).classList.add("showresults");
-                                document.getElementById(
-                                    "resultText",
-                                ).innerText =
-                                    "Unfortunately, you ran out of money to sustain yourself within this country. You have to go back.";
-                                document.getElementById(
-                                    "continueButton",
-                                ).href =
-                                    "welcome.html?returnId=22";
-                                document.getElementById(
-                                    "answer1",
-                                ).disabled = true;
-                                document.getElementById(
-                                    "answer2",
-                                ).disabled = true;
+                                finishGame(
+                                    "Unfortunately, you ran out of money to sustain yourself within this country. You have to go back.",
+                                    "welcome.html?returnId=22",
+                                );
                                 return;
                             }
 
@@ -193,23 +198,10 @@
                             currentQuestion++;
 
                             if (currentWealth < 0) {
-                                document.getElementById(
-                                    "result",
-                                ).classList.add("showresults");
-                                document.getElementById(
-                                    "resultText",
-                                ).innerText =
-                                    "Unfortunately, you ran out of money to sustain yourself within this country. You have to go back.";
-                                document.getElementById(
-                                    "continueButton",
-                                ).href =
-                                    "welcome.html?returnId=22";
-                                document.getElementById(
-                                    "answer1",
-                                ).disabled = true;
-                                document.getElementById(
-                                    "answer2",
-                                ).disabled = true;
+                                finishGame(
+                                    "Unfortunately, you ran out of money to sustain yourself within this country. You have to go back.",
+                                    "welcome.html?returnId=22",
+                                );
                                 return;
                             }
                             if (currentQuestion < data.length) {
@@ -236,7 +228,7 @@
             //burayı start buttonsuz yapmak lazım
             function startTimer() {
                 let interval = 100;
-                var countDown = setInterval(() => {
+                countDown = setInterval(() => {
                     interval--;
 
                     let progressWidth = interval / 100 * 100;
@@ -248,12 +240,6 @@
                     } else {
                         clearInterval(countDown);
                         progressBar.style.width = "0%";
-                        window.location.href =
-                            "welcome.html?returnId=22";
-                        document.getElementById("answer1")
-                            .disabled = true;
-                        document.getElementById("answer2")
-                            .disabled = true;
                         let options = [0.2, 0.3, 0.4];
                         let indKeyfi = options[
                             Math.round(Math.random() * 2)
@@ -261,28 +247,16 @@
                         let passingPotential = currentHealth *
                             indKeyfi;
 
-                        if (passingPotential >= 26) {
-                            document.getElementById("result")
-                                .classList.add("showresults");
-                            document.getElementById(
-                                "resultText",
-                            ).innerText =
-                                "Congratulations! You got the artist visa and have earned an extra year.";
-                            document.getElementById(
-                                "continueButton",
-                            ).href = "../index.html"; //bunu da değiştirmen lazımn
-                            console.log(passingPotential);
+                        if (passingPotential >= 20) {
+                            finishGame(
+                                "Congratulations! You got the artist visa and have earned an extra year.",
+                                "../index.html",
+                            );
                         } else {
-                            document.getElementById("result")
-                                .classList.add("showresults");
-                            document.getElementById(
-                                "resultText",
-                            ).innerText =
-                                "Unfortunately, you did not get the artist visa, you have 28 days to leave the country.";
-                            document.getElementById(
-                                "continueButton",
-                            ).href = "welcome.html?returnId=22";
-                            console.log(passingPotential);
+                            finishGame(
+                                "Unfortunately, you did not get the artist visa, you have 28 days to leave the country.",
+                                "welcome.html?returnId=22",
+                            );
                         }
                     }
                 }, 1000);
@@ -292,7 +266,6 @@
                 "DOMContentLoaded",
                 function () {
                     startTimer();
-                    showStats();
                 },
             );
 
@@ -333,7 +306,7 @@
                         .visibility = "visible";
                     console.log("hi");
                     if (
-                        permitTime.style.visibility == "visible"
+                        document.getElementById("permitTime").style.visibility == "visible"
                     ) {
                         startPermitTimer();
                         document.getElementById("answer1")
@@ -361,10 +334,10 @@
                 document.getElementById("permitTime").style
                     .visibility = "hidden";
                 document.getElementById("answer1").disabled =
-                    false;
+                    gameEnded;
                     console.log("you can answer now")
                 document.getElementById("answer2").disabled =
-                    false;
+                    gameEnded;
                 stopPermitTimer(); // clears + resets, ready for next openAlert call
             }
 
@@ -487,10 +460,17 @@
             font-size: 30px;
             top: 50%;
             background-color: thistle;
+            z-index: 1002;
             left: 50%;
             transform: translate(-50%, -50%);
             visibility: hidden;
             padding: 2em;
+        }
+
+        .answerOne:disabled,
+        .answerTwo:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .showresults {
